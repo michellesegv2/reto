@@ -1,0 +1,170 @@
+@import "../../sass/variables.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Login {
+  position: relative;
+  overflow: hidden;
+  font-family: "Open Sans";
+  &__bgRed {
+    border-bottom-right-radius: 100px;
+    background-color: $rimacColor;
+    color: #ffffff;
+  }
+  &__logo {
+    padding: 15px 80px;
+    margin: 0 auto;
+    border-bottom: 0.5px solid #ffffff;
+    img {
+      width: 50px;
+    }
+  }
+  &__info {
+    padding: 50px 80px;
+    font-size: 12px;
+    h1 {
+      padding-bottom: 20px;
+      font-size: 30px;
+      span {
+        font-weight: 100;
+        display: block;
+      }
+    }
+    ul {
+      padding-left: 15px;
+      li {
+        margin: 20px 0;
+        text-decoration: none;
+      }
+    }
+  }
+  &__footer {
+    padding: 0 80px 50px 80px;
+    font-size: 10px;
+  }
+  &__centerImg {
+    position: absolute;
+    width: 180px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    img {
+      width: 100%;
+    }
+  }
+  &__form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    color: $plomoColor;
+    h3 {
+      font-weight: normal;
+      font-size: 20px;
+      span {
+        color: $rimacColor;
+      }
+    }
+    p {
+      font-size: 12px;
+      margin: 10px 0 15px;
+    }
+    input {
+      // color: $plomoInputColor;
+      width: 100%;
+      padding: 15px;
+      border-radius: 3px;
+      border: 0.5px solid $plomoInputColor;
+      margin: 5px 0;
+      outline: 0;
+    }
+    &__fechaNacimiento {
+    }
+    &__celular {
+    }
+    &__lpcc,
+    &__lpdp {
+      display: block;
+      margin: 15px 0;
+      position: relative;
+      padding-left: 25px;
+      cursor: pointer;
+      font-size: 13px;
+      user-select: none;
+      font-size: 10px;
+      color: $plomoInputColor;
+      a {
+        color: #888c9b;
+      }
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        &:hover ~ .Login__form__checkmark {
+          background-color: #149200;
+        }
+        &:checked ~ .Login__form__checkmark {
+          background-color: #149200;
+        }
+      }
+    }
+    &__checkmark {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      height: 15px;
+      width: 15px;
+      border: 0.5px solid $plomoInputColor;
+      border-radius: 3.5px;
+    }
+
+    &__button {
+      margin: 0 auto;
+      display: inline-block;
+      text-transform: uppercase;
+      border-radius: 3.5px;
+      margin-top: 15px;
+      background-color: $btnDisabledColor;
+      a {
+        padding: 10px 20px;
+        font-size: 11px;
+        color: $plomoInputColor;
+        text-decoration: none;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &.habilitado {
+        a {
+          color: #ffffff;
+          background-color: $rimacColor;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .Login {
+    &__info {
+      padding: 50px 30px;
+      &__benefits {
+        display: none;
+      }
+    }
+    &__footer {
+      display: none;
+    }
+    &__centerImg {
+      position: absolute;
+      top: 70px;
+      right: -50px;
+      left: auto;
+      width: 180px;
+      transform: none;
+    }
+  }
+}
